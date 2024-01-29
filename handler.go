@@ -35,6 +35,8 @@ func createBook(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var book Book
 	_ = json.NewDecoder(r.Body).Decode(&book)
+	// reqBody, _ := ioutil.ReadAll(r.Body)
+	// json.Unmarshal(reqBody, &book)
 	book.ID = strconv.Itoa(len(bookList) + 1)
 	bookList = append(bookList, book)
 	json.NewEncoder(w).Encode(book)
