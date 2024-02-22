@@ -1,4 +1,4 @@
-module rest-api
+module github.com/thunderfreak/rest-api
 
 go 1.21.6
 
